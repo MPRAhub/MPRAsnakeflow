@@ -1,0 +1,28 @@
+
+---
+global:
+  threads: 16 # threads used by bwa mem 
+  assignments:
+    split_number: 100 
+assignments:
+  exampleAssignment: ## just naming it differently
+    bc_length: 15 # new parameter
+    sequence_length:
+      min: 195
+      max: 275
+    alignment_start:
+      min: 15
+      max: 17
+    FW:
+      - /sbgenomics/project-files/input_files/pilotHepG2_R1_001.fastq.gz
+    BC:
+      - /sbgenomics/project-files/input_files/pilotHepG2_I1_001.fastq.gz
+    REV:
+      - /sbgenomics/project-files/input_files/pilotHepG2_R2_001.fastq.gz
+    reference: /sbgenomics/project-files/input_files/pilot_hepg2_elements.fa
+    configs:
+      exampleConfig:
+        min_support: 3
+        fraction: 0.7 # I think the default in MPRAflow is 0.5. We use nowadays 0.7 because of better data.
+        unknown_other: false # false because we want to remove them, true is just for debug reasons
+        ambiguous: false # false because we want to remove them, true is just for debug reasons

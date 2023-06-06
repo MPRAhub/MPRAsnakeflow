@@ -1,0 +1,20 @@
+experiments:
+  exampleCount:
+    bc_length: 15
+    umi_length: 10
+    data_folder: /sbgenomics/project-files/input_files
+    experiment_file: /sbgenomics/project-files/input_files/pilot_hepg2_experiment.csv 
+    demultiplex: false
+    assignments:
+      fromFile:
+        type: file
+        assignment_file: /sbgenomics/workspace/results/assignment/exampleAssignment/assignment_barcodes.exampleConfig.sorted.tsv.gz
+    design_file: /sbgenomics/project-files/input_files/pilot_hepg2_elements.fa
+    configs:
+      exampleConfig:
+        filter:
+          bc_threshold: 10
+          DNA:
+            min_counts: 1
+          RNA:
+            min_counts: 1
